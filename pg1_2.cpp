@@ -2,17 +2,16 @@
 #include<string>
 using namespace std;
 int main(){
-    int i,j;
     string s;
     cout <<"enter a word:";
     cin >>s;
-    cout<<"length:"<<s.len();
+    cout<<"length:"<<s.length();
     cout<<"upper:";
     for(char c:s)
-    cout<< to upper(c);
+    cout<< toupper(c);
 cout<<endl;
 bool pal=true;
-for(size_t ;i=0;j=(s.size()-1);i<j;i++;j--);
+for(size_t ;int i=0;int j=(s.size_t()-1);i<j;++i;--j){;
 if(s[i]!=s[j]){
     pal=false;
     break;
