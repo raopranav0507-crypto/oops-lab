@@ -1,13 +1,14 @@
 //deeep copy assignment operator
 #include <iostream>
 #include <cstring>
+using namespace std;
 
-class text{
+class Text{
     char *buf;
     public:
-    text(const char *s = ""){buff = new char[strlen(s)+1];strcpy(buff.s);}
-    text(const text &o) {buff  = new char[strlen(o.buff)+1];strcpy(buff, o.buff);}
-    text& operator=(const text &o ){
+    Text(const char *s = ""){buf = new char[strlen(s)+1];strcpy(buf,s);}
+    Text(const Text &o) {buf  = new char[strlen(o.buf)+1];strcpy(buf, o.buf);}
+    Text& operator=(const Text &o ){
         if (this!=&o){
         delete[] buf;
         buf = new char[strlen(o.buf)+1];
@@ -15,11 +16,11 @@ class text{
     }
     return *this;
 }
-`text() {delete[] buf;}
-void show()const { cout << buf<<endl;}
+~Text() {delete[] buf;}
+void show() const { cout << buf<< endl;}
 };
 int main(){
-    text a("alpha"),b("beta");
+    Text a("alpha"),b("beta");
     b=a;
     a.show();b.show();
     return 0;
